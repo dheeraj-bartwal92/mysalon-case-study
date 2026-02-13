@@ -338,3 +338,15 @@ img{max-width:100%;display:block}
   .screens-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
   .login-comparison{flex-direction:column;align-items:center}
 }
+
+.contact-box {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  padding: 30px;
+  border-radius: 16px;
+  max-width: 500px;
+}
+.contact-box p {
+  margin-bottom: 10px;
+  font-size: 15px;
+}
