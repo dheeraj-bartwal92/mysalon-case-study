@@ -95,12 +95,21 @@ img{max-width:100%;display:block}
 .phone-frame{
   width:260px;border-radius:32px;background:var(--dark);padding:12px;
   box-shadow:0 40px 80px rgba(26,10,10,0.15),0 8px 24px rgba(26,10,10,0.08);
-  position:relative;transform:perspective(800px)
+  position:relative;transform:perspective(800px);overflow:hidden
 }
 .phone-1{transform:perspective(800px) rotateY(5deg);z-index:2}
 .phone-2{transform:perspective(800px) rotateY(-5deg) translateY(40px);z-index:1}
 .phone-screen{
   border-radius:22px;overflow:hidden;background:var(--cream);min-height:460px;padding:20px 16px
+}
+
+/* Real App Images */
+.phone-screen-image {
+  width: 100%;
+  height: auto;
+  border-radius: 22px;
+  display: block;
+  object-fit: cover;
 }
 
 /* Phone screen elements */
@@ -204,9 +213,18 @@ img{max-width:100%;display:block}
 /* Mini phone */
 .mini-phone{
   width:220px;border-radius:28px;background:var(--dark);padding:10px;
-  box-shadow:0 30px 60px rgba(26,10,10,0.12),0 6px 16px rgba(26,10,10,0.06)
+  box-shadow:0 30px 60px rgba(26,10,10,0.12),0 6px 16px rgba(26,10,10,0.06);
+  overflow:hidden
 }
 .mini-screen{border-radius:20px;overflow:hidden;background:var(--cream);min-height:380px;padding:18px 14px}
+
+.mini-screen-image {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  display: block;
+  object-fit: cover;
+}
 
 /* Onboarding mini */
 .onboarding-screen{display:flex;flex-direction:column;align-items:center;justify-content:center}
@@ -221,9 +239,17 @@ img{max-width:100%;display:block}
 
 /* Login comparison */
 .login-comparison{display:flex;gap:16px}
-.login-mini{width:160px;border-radius:16px;padding:20px 14px;display:flex;flex-direction:column;gap:10px}
+.login-mini{width:160px;border-radius:16px;padding:0;display:flex;flex-direction:column;overflow:hidden}
 .client-login-mini{background:var(--cream);border:1px solid var(--border)}
 .vendor-login-mini{background:var(--dark)}
+
+.login-image {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  object-fit: cover;
+}
 .lm-badge{font-size:9px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--burgundy);background:rgba(139,34,82,0.08);padding:4px 10px;border-radius:10px;align-self:flex-start}
 .lm-badge.vendor-badge{color:var(--gold);background:rgba(212,165,116,0.15)}
 .lm-title{font-size:14px;font-weight:700;color:var(--text)}
@@ -278,7 +304,6 @@ img{max-width:100%;display:block}
 .subheading-preview{font-size:20px;font-weight:600}
 .body-preview{font-size:15px;font-weight:400;color:var(--text-secondary)}
 .caption-preview{font-size:12px;font-weight:500;color:var(--text-light)}
-.components-card{}
 .component-samples{display:flex;flex-wrap:wrap;gap:10px;align-items:center}
 .comp-btn{padding:10px 20px;border-radius:20px;font-size:13px;font-weight:600;display:inline-block}
 .comp-primary{background:var(--burgundy);color:#fff}
@@ -303,6 +328,29 @@ img{max-width:100%;display:block}
   transition:transform 0.2s,box-shadow 0.2s
 }
 .screen-item:hover{transform:translateY(-2px);box-shadow:0 8px 20px rgba(139,34,82,0.06)}
+.screen-thumbnail {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  margin-bottom: 16px;
+  border: 1px solid var(--border);
+  display: block;
+}
+.screen-placeholder {
+  background: linear-gradient(135deg, rgba(139, 34, 82, 0.05) 0%, rgba(212, 165, 116, 0.05) 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px dashed var(--border);
+}
+.screen-placeholder .placeholder-text {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-light);
+  text-align: center;
+  padding: 0 12px;
+}
 .screen-icon{font-size:12px;font-weight:800;color:var(--burgundy);margin-bottom:10px;letter-spacing:1px}
 .screen-item h4{font-size:15px;font-weight:700;margin-bottom:6px}
 .screen-item p{font-size:12px;color:var(--text-secondary);line-height:1.5}
