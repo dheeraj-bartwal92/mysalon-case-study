@@ -43,9 +43,23 @@ img{max-width:100%;display:block}
 .nav-brand{display:flex;align-items:center;gap:10px}
 .nav-logo{width:32px;height:32px;border-radius:8px;background:var(--burgundy);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:800;font-size:16px}
 .nav-name{font-weight:600;font-size:14px;color:var(--text-secondary);letter-spacing:0.5px}
-.nav-links{display:flex;gap:32px}
+.nav-links{display:flex;gap:32px;align-items:center}
 .nav-links a{font-size:13px;font-weight:500;color:var(--text-secondary);transition:color 0.2s}
 .nav-links a:hover{color:var(--burgundy)}
+.nav-links a.nav-contact{
+  background:var(--burgundy);
+  color:#fff;
+  padding:8px 20px;
+  border-radius:20px;
+  font-weight:600;
+  transition:all 0.3s;
+}
+.nav-links a.nav-contact:hover{
+  background:var(--burgundy-dark);
+  transform:translateY(-1px);
+  box-shadow:0 4px 12px rgba(139,34,82,0.3);
+  color:#fff;
+}
 
 /* HERO */
 .hero{
@@ -329,6 +343,7 @@ img{max-width:100%;display:block}
   .color-card{grid-column:span 1}
   .nav-links{display:none}
   .phone-2{display:none}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
 }
 
 @media(max-width:600px){
@@ -337,16 +352,138 @@ img{max-width:100%;display:block}
   .hero-meta-divider{width:40px;height:1px}
   .screens-grid{grid-template-columns:repeat(auto-fill,minmax(160px,1fr))}
   .login-comparison{flex-direction:column;align-items:center}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+  .contact-box{padding:32px 24px}
+  .contact-cta{padding:32px 24px}
+}
+
+/* CONTACT SECTION */
+.contact-intro {
+  max-width: 600px;
+  margin: 0 auto 40px;
+  font-size: 16px;
+  color: var(--text-secondary);
+  line-height: 1.7;
+  text-align: center;
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
 .contact-box {
   background: var(--surface);
   border: 1px solid var(--border);
-  padding: 30px;
+  padding: 40px;
   border-radius: 16px;
-  max-width: 500px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  box-shadow: 0 4px 16px rgba(139, 34, 82, 0.04);
+  transition: transform 0.3s, box-shadow 0.3s;
 }
-.contact-box p {
-  margin-bottom: 10px;
+
+.contact-box:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 24px rgba(139, 34, 82, 0.08);
+}
+
+.contact-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.contact-icon {
+  width: 44px;
+  height: 44px;
+  border-radius: 12px;
+  background: rgba(139, 34, 82, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--burgundy);
+  flex-shrink: 0;
+  transition: background 0.3s, transform 0.3s;
+}
+
+.contact-item:hover .contact-icon {
+  background: rgba(139, 34, 82, 0.15);
+  transform: scale(1.05);
+}
+
+.contact-info {
+  flex: 1;
+}
+
+.contact-label {
+  font-size: 11px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 1.5px;
+  color: var(--text-light);
+  margin-bottom: 6px;
+}
+
+.contact-link {
   font-size: 15px;
+  font-weight: 600;
+  color: var(--burgundy);
+  text-decoration: none;
+  transition: color 0.2s;
+  display: inline-block;
+}
+
+.contact-link:hover {
+  color: var(--burgundy-dark);
+  text-decoration: underline;
+}
+
+.contact-cta {
+  text-align: center;
+  padding: 40px;
+  background: linear-gradient(135deg, rgba(139, 34, 82, 0.05) 0%, rgba(212, 165, 116, 0.05) 100%);
+  border-radius: 16px;
+  border: 1px solid var(--border);
+}
+
+.cta-text {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 20px;
+}
+
+.cta-button {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--burgundy);
+  color: #fff;
+  padding: 14px 32px;
+  border-radius: 30px;
+  font-size: 15px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: all 0.3s;
+  box-shadow: 0 4px 12px rgba(139, 34, 82, 0.2);
+}
+
+.cta-button:hover {
+  background: var(--burgundy-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(139, 34, 82, 0.3);
+}
+
+.cta-button svg {
+  transition: transform 0.3s;
+}
+
+.cta-button:hover svg {
+  transform: translateX(4px);
 }
